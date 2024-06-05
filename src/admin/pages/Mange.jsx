@@ -51,8 +51,8 @@ const Mange = () => {
 
   let remove = async (id) => {
     try {
-      let res = await Delete_api(`${delete_product}/${id}`)
-      setproduct(product.filter((val) => val.id != res.data.id))
+      let res = await Delete_api(delete_product,id)
+      setproduct(product.filter((val) => val.id != id))
     } catch (error) {
       console.log(error, "error");
     }
@@ -61,9 +61,9 @@ const Mange = () => {
   //update
 
   let viewupdate = (val) => {
-    setmodel("block")
+    setmodel("block");
     console.log(val);
-    setview(val)
+    setview(val);
   }
   let close = () => {
     setmodel("none")
@@ -74,7 +74,7 @@ const Mange = () => {
 
   let save = async (val) => {
     try {
-      let res = await update_api(`${put_product}/${view.id}`, view)
+      let res = await update_api(put_product, view)
       console.log(res);
       setproduct(product.map((val) => val.id == res.data.id ? { ...view } : val))
     } catch (error) {
@@ -129,16 +129,16 @@ const Mange = () => {
                 <label>name :<input type="text" name='name' onChange={handle} /></label>
                 <label>Price :<input type="number" name='price' onChange={handle} /></label>
                 <label>Descrtion :<input type="text" name='desc' onChange={handle} /></label>
-                <label>isactive :<input type="text" name='isactive' onChange={handle} /></label>
+                <label>isactive :<input type="radio" name='isactive' onChange={handle} /></label>
                 <button onClick={addProduct}>add</button>
               </div>
 
               <div className="model  my-4" style={{ display: `${model}`, position: "fixed", top: "0" }}>
                 <span onClick={close}><i class="fa-regular fa-circle-xmark"></i></span>
                 <label className='mb-3'>name :<input type="text" name='name' value={view.name} onChange={viewhandle} /></label>
-                <label className='mb-3'>Price :<input type="number" name='price' value={view.price} onChange={viewhandle} /></label>
-                <label className='mb-3'>Descrtion :<input type="text" name='desc' value={view.desc} onChange={viewhandle} /></label>
-                <label className='mb-3'>isactive :<input type="text" name='isactive' value={view.isactive} onChange={viewhandle} /></label>
+                <label className='mb-3'>Price :<input type="number" name='price' value={view.price} onChange={viewhandle}/></label>
+                <label className='mb-3'>Descrtion :<input type="text" name='desc' value={view.desc} onChange={viewhandle}/></label>
+                <label className='mb-3'>isactive :<input type="ratio" name='isactive' value={view.isactive} onChange={viewhandle} /></label>
                 <button onClick={save}>save</button>
               </div>
             </div>

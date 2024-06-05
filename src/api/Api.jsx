@@ -11,12 +11,12 @@ export let Post_api = async (endpoint, product) => {
 };
 
 export let Delete_api = async (endpoint, id) => {
-    let res = await axios.delete(base_url + endpoint, id)
+    let res = await axios.delete(base_url + endpoint+`/${id}`)
     return res;
 };
 
 export let update_api = async (endpoint, product) => {
-    let res = await axios.put(base_url + endpoint, product)
+    let res = await axios.put(base_url + endpoint+`/${product.id}`, product)
     return res;
 }
 
