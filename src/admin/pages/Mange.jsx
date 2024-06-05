@@ -106,9 +106,9 @@ const Mange = () => {
                 </thead>
                 <tbody>
                   {
-                    product?.map((val, index) => {
+                    product?.map((val, ind) => {
                       return (
-                        <React.Fragment key={index}>
+                        <React.Fragment key={ind}>
                           <tr>
                             <td>{val.name}</td>
                             <td>{val.price}</td>
@@ -133,7 +133,7 @@ const Mange = () => {
                 <button onClick={addProduct}>add</button>
               </div>
 
-              <div className="model " style={{ display: `${model}`, position: "fixed", top: "0" }}>
+              <div className="model my-2" style={{ display: `${model}`, position: "fixed", top: "0" }}>
                 <span onClick={close}><i class="fa-regular fa-circle-xmark"></i></span>
                 <label className='mb-3'>name :<input type="text" name='name' value={view.name} onChange={viewhandle} /></label>
                 <label className='mb-3'>Price :<input type="number" name='price' value={view.price} onChange={viewhandle}/></label>
