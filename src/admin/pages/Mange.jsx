@@ -133,7 +133,7 @@ const Mange = () => {
                 <button onClick={addProduct}>add</button>
               </div>
 
-              <div className="model  my-4" style={{ display: `${model}`, position: "fixed", top: "0" }}>
+              <div className="model " style={{ display: `${model}`, position: "fixed", top: "0" }}>
                 <span onClick={close}><i class="fa-regular fa-circle-xmark"></i></span>
                 <label className='mb-3'>name :<input type="text" name='name' value={view.name} onChange={viewhandle} /></label>
                 <label className='mb-3'>Price :<input type="number" name='price' value={view.price} onChange={viewhandle}/></label>
@@ -148,5 +148,6 @@ const Mange = () => {
     </div>
   )
 }
+
 
 export default Mange
