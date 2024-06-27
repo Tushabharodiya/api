@@ -85,7 +85,6 @@ const Mange = () => {
 
   return (
     <div>
-      <h1>manage</h1>
 
       <div className="data">
         <div className="container">
